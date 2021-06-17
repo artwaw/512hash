@@ -26,3 +26,11 @@ TRANSLATIONS += \
 
 INCLUDEPATH += \
     ../cryptoclass/
+
+win32: {
+LIBS += -L$$PWD/../../libs/cryptoclass/ -lcrypt
+INCLUDEPATH += ../../libs/cryptoclass
+DEPENDPATH += $$PWD/../../libs/cryptoclass
+PRE_TARGETDEPS += $$PWD/../../libs/cryptoclass/libcrypt.a
+PRE_TARGETDEPS += $$PWD/../../libs/cryptoclass/libcrypt.dll.a
+}

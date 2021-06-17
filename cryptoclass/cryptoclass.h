@@ -6,6 +6,9 @@
 #include <QCryptographicHash>
 #include <QDebug>
 #include "unistd.h"
+#ifdef Q_OS_WIN
+    #include "../../libs/cryptoclass/crypt.h"
+#endif
 
 class CryptoClass : public QObject
 {
