@@ -41,8 +41,8 @@ and run.
 
 # LEGAL
 
-In general this comes with LGPL ver. 2.0 licence for my part. Please see LICENCE file.
-I used Qt to write this, all Qt libraries that are distributed come with same LGPL 2.0 licence.
+In general this comes with LGPL ver. 3.0 licence for my part. Please see LICENCE file.
+I used Qt to write this, all Qt libraries that are distributed come with same LGPL 3.0 licence.
 Please see Qt-LICENCE file.
 
 ON WINDOWS additonaly I had to use MSYS2 libraries, those come with BSD 3-Clause "New" or "Revised" License
