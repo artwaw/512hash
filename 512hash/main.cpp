@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationDomain("trollnet.com.pl");
     QCoreApplication::setApplicationName("512hash");
     QCommandLineParser parser;
-    parser.setApplicationDescription("Creates SHA-512 hash of a password with proper salt added. Console version.");
+    parser.setApplicationDescription(aboutConsoleString);
     QString pw;
     QString errMsg;
     switch (parseReulst(parser,&errMsg,&pw)) {
@@ -58,17 +58,18 @@ int main(int argc, char *argv[])
         return 1;
         break;
     case clVerRequested:
+        fputs(qPrintable(aboutQt),stdout);
         parser.showVersion();
-        return 0;
         break;
     case clHelpRequested:
-        parser.showHelp();
-        return 0;
+        fputs(qPrintable(aboutQt),stdout);
+        parser.showHelp(0);
+        break;
     case clArgMissing:
         fputs(qPrintable("Missing parameter"),stderr);
         fputs("\n",stderr);
-        parser.showHelp();
-        return 1;
+        parser.showHelp(1);
+        break;
     }
     CryptoClass crypto;
     const QString result = crypto.getHash(pw.toUtf8()).toBase64();

@@ -5,4 +5,7 @@ SUBDIRS += \
     512hash-gui
 
 DISTFILES += \
-    README.md
+    README.md \
+    MSYS-LICENSE \
+    QT-LICENSE \
+    LICENSE

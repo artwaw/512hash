@@ -12,3 +12,6 @@ Zipped distribution files have been provided for Windows and macOS.
 There is little sense using this on Linux ;)
 
 # Requirements
+
+## macOS
+

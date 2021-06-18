@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QClipboard>
 #include <QPushButton>
+#include <QMessageBox>
 #include "cryptoclass.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,5 +29,6 @@ private slots:
     void pastePwd();
     void genPwd();
     void makeHash();
+    void about();
 };
 #endif // MAINWINDOW_H

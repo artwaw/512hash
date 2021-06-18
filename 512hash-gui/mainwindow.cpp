@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pasteBtn,&QPushButton::clicked,this,&MainWindow::pastePwd);
     connect(ui->genPassBtn,&QPushButton::clicked,this,&MainWindow::genPwd);
     connect(ui->makeHashBtn,&QPushButton::clicked,this,&MainWindow::makeHash);
+    connect(ui->aboutBtn,&QPushButton::clicked,qApp,&QApplication::aboutQt);
+    connect(ui->quitBtn,&QPushButton::clicked,qApp,&QApplication::quit);
+    connect(ui->helpBtn,&QPushButton::clicked,this,&MainWindow::about);
 }
 
 MainWindow::~MainWindow()
@@ -34,4 +37,8 @@ void MainWindow::genPwd() {
 void MainWindow::makeHash() {
     ui->hashLine->setText(crypto.getHash(ui->passLine->text().toUtf8()).toBase64());
     crypto.reset();
+}
+
+void MainWindow::about() {
+    QMessageBox::information(this,"What is it",aboutString);
 }
