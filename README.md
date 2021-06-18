@@ -4,6 +4,9 @@ Creates SHA-512 hash from the given password
 Comes as two tools - command line and GUI.
 
 1) Command line just takes a plaintext password as a parameter and throws out the hash.
+Available switches are:
+$ 512hash [-v] [--version]
+$ 512hash [-h] [--help]
 
 2) GUI allows user to generate random password or multiple runs.
 Password can be copied form clipboard, hash can be copied to.
@@ -24,9 +27,9 @@ Both version are x64. Zip files contain all the libraries needed to run.
 
 # Installation and running
 
-## macOS
-
 No installation required.
+
+## macOS
 
 GUI version might require you to head over to System preferences -> Security and privacy ->
 General and click "allow" at the bottom. The code is not signed so it is likely that 
@@ -61,4 +64,8 @@ No additional requirements.
 Since I need to rely on glibc crypt(3) the choice was mingw32-64. This environment can be downloaded from
 https://www.msys2.org - from whole thing you just need libcrypt package (in msys2 run pacman -S libcrypt and
 pacman -S libcrypt-devel). You'll need to adjust paths in the headers and .pro files to point out where the crypt.h file is.
+
+# CONTACT
+
+Please raise the issue on GitHub: https://github.com/artwaw/512hash/issues
 
