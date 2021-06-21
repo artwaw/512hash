@@ -40,7 +40,7 @@ CommandLineParseResult parseReulst(QCommandLineParser &parser,QString *resString
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    QCoreApplication::setApplicationVersion("0.1");
+    QCoreApplication::setApplicationVersion("0.11");
     QCoreApplication::setOrganizationName("TrollNet");
     QCoreApplication::setOrganizationDomain("trollnet.com.pl");
     QCoreApplication::setApplicationName("512hash");
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
         break;
     }
     CryptoClass crypto;
-    const QString result = crypto.getHash(pw.toUtf8()).toBase64();
+    const QString result = crypto.getCHash(pw.toUtf8());
     printf(qPrintable(result));
     printf("\n");
     return 0;

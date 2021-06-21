@@ -35,8 +35,7 @@ void MainWindow::genPwd() {
 }
 
 void MainWindow::makeHash() {
-    ui->hashLine->setText(crypto.getHash(ui->passLine->text().toUtf8()).toBase64());
-    crypto.reset();
+    ui->hashLine->setText(crypto.getCHash(ui->passLine->text().toUtf8()));
 }
 
 void MainWindow::about() {

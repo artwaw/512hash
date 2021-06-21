@@ -3,12 +3,9 @@
 
 #include <QObject>
 #include <QRandomGenerator>
-#include <QCryptographicHash>
 #include <QDebug>
-#include "unistd.h"
-#ifdef Q_OS_WIN
-    #include "../../libs/cryptoclass/crypt.h"
-#endif
+#include "openssl/evp.h"
+#include "openssl/sha.h"
 
 static const QString aboutString = "Program takes a password and makes SHA512 hash from it.\n"
                                    "It uses GNU crypt as this was my requirement.\n"
@@ -39,16 +36,13 @@ class CryptoClass : public QObject
     Q_OBJECT
 public:
     explicit CryptoClass(QObject *parent = nullptr);
-    QByteArray getHash(const QByteArray &data) const;
-    ~CryptoClass();
+    QString getCHash(const QByteArray &data) const;
     QString generateRndStr(int length) const;
     void reset();
 
 private:
-    const QString pool = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const QCryptographicHash::Algorithm method = QCryptographicHash::Sha512;
+    const QString pool = "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     QRandomGenerator generator;
-    QCryptographicHash *hash;
 };
 
 #endif // CRYPTOCLASS_H
