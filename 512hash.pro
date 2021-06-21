@@ -6,6 +6,6 @@ SUBDIRS += \
 
 DISTFILES += \
     README.md \
-    MSYS-LICENSE \
     QT-LICENSE \
+    OSSL-LICENSE \
     LICENSE

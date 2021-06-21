@@ -28,7 +28,13 @@ INCLUDEPATH += \
     ../cryptoclass/
 
 win32: {
-LIBS += -L$$PWD/../../libs/cryptoclass/ -lcrypt
-INCLUDEPATH += ../../libs/cryptoclass
-DEPENDPATH += $$PWD/../../libs/cryptoclass
+INCLUDEPATH += C:/msys64/ossl/openssl/include/
+DEPENDPATH += C:/msys64/ossl/openssl/include
+LIBS += -LC:/msys64/ossl/openssl/lib/ -llibcrypto.dll
+}
+
+macx :{
+INCLUDEPATH += $$PWD/../../libs/openssl/include
+DEPENDPATH += $$PWD/../../libs/openssl/include
+LIBS += -L$$PWD/../../libs/openssl/lib/ -lcrypto
 }
